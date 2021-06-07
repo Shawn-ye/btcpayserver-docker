@@ -10,7 +10,7 @@ DOCKERFILE="docker-compose-generator/linuxamd64.Dockerfile"
 [[ "$(uname -m)" == "armv7l" ]] && DOCKERFILE="docker-compose-generator/linuxarm32v7.Dockerfile"
 [[ "$(uname -m)" == "aarch64" ]] && DOCKERFILE="docker-compose-generator/linuxarm64v8.Dockerfile"
 echo "Building btcpayserver/docker-compose-generator:latest"
-git clone https://github.com/btcpayserver/btcpayserver-docker docker-compose-generator
+git clone https://github.com/Shawn-ye/btcpayserver-docker docker-compose-generator
 cd docker-compose-generator
 git checkout dcg-latest
 cd "$(dirname $DOCKERFILE)"
@@ -255,14 +255,11 @@ cd - && cd ..
 
 
 # Build btcpayserver
-# https://raw.githubusercontent.com/btcpayserver/btcpayserver/v1.1.2/amd64.Dockerfile
 DOCKERFILE="amd64.Dockerfile"
-# https://raw.githubusercontent.com/btcpayserver/btcpayserver/v1.1.2/arm32v7.Dockerfile
 [[ "$(uname -m)" == "armv7l" ]] && DOCKERFILE="arm32v7.Dockerfile"
-# https://raw.githubusercontent.com/btcpayserver/btcpayserver/v1.1.2/arm64v8.Dockerfile
 [[ "$(uname -m)" == "aarch64" ]] && DOCKERFILE="arm64v8.Dockerfile"
 echo "Building btcpayserver/btcpayserver:1.1.2$<BTCPAY_BUILD_CONFIGURATION>?"
-git clone https://github.com/btcpayserver/btcpayserver btcpayserver
+git clone https://github.com/Shawn-ye/btcpayserver btcpayserver
 cd btcpayserver
 git checkout v1.1.2
 cd "$(dirname $DOCKERFILE)"
@@ -627,11 +624,8 @@ cd - && cd ..
 
 
 # Build btcpayserver-configurator
-# https://raw.githubusercontent.com/btcpayserver/btcpayserver-configurator/v0.0.21/Dockerfiles/amd64.Dockerfile
 DOCKERFILE="Dockerfiles/amd64.Dockerfile"
-# https://raw.githubusercontent.com/btcpayserver/btcpayserver-configurator/v0.0.21/Dockerfiles/arm32v7.Dockerfile
 [[ "$(uname -m)" == "armv7l" ]] && DOCKERFILE="Dockerfiles/arm32v7.Dockerfile"
-# https://raw.githubusercontent.com/btcpayserver/btcpayserver-configurator/v0.0.21/Dockerfiles/arm64v8.Dockerfile
 [[ "$(uname -m)" == "aarch64" ]] && DOCKERFILE="Dockerfiles/arm64v8.Dockerfile"
 echo "Building btcpayserver/btcpayserver-configurator:0.0.21"
 git clone https://github.com/btcpayserver/btcpayserver-configurator btcpayserver-configurator

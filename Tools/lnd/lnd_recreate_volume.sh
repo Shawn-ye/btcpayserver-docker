@@ -22,7 +22,6 @@ btcpay-down.sh
 docker volume rm --force generated_lnd_bitcoin_datadir
 
 # very old installations had production_lnd_bitcoin_datadir volume
-# https://github.com/btcpayserver/btcpayserver-docker/issues/272
 docker volume rm --force production_lnd_bitcoin_datadir
 
 btcpay-up.sh
