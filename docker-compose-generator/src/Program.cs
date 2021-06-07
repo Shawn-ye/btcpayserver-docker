@@ -59,7 +59,7 @@ namespace DockerGenerator
 			}
 			fragments.Add("btcpayserver");
 			
-			bool hasAltcoins = false;
+			bool hasAltcoins = true;
 			foreach (var crypto in cryptoDefinitions)
 			{
 				if (!composition.SelectedCryptos.Contains(crypto.Crypto))
